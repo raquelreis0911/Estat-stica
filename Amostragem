@@ -143,6 +143,16 @@ amostra = strata(infert, c("education"), size=c(5, 48, 47), method="srswor")
 ##Último comentário sobre o código: o method="srswor" na função strata significa que é gerada uma amostra aleatória SEM reposição. 
 Para conhecer outros métodos, use Help na função strata. 
 
+help (strata)
+
+method	
+method to select units; the following methods are implemented: 
+simple random sampling without replacement (srswor), 
+simple random sampling with replacement (srswr), 
+Poisson sampling (poisson), 
+systematic sampling (systematic); 
+if "method" is missing, the default method is "srswor".
+
 
 3. Para gerar amostra sistemática
 
