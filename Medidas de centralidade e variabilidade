@@ -1,0 +1,105 @@
+1. Medidas de centralidade
+
+Média: 
+
+A média da amostra é divida por n:
+X= Σ (soma de todos os valores)/n 
+
+A média da população é por N:
+μ = Σ /N
+
+Moda: é a valor mais frequente. Pode acontecer de ter mais de uma moda no conjunto de dados ou nenhuma. 
+
+Mediana: é o valor do meio.
+
+Para calcular a mediana: 1) ordenar os valores em ordem crescente; 
+                         2) se a quantidade n for par, será a média dos valores nas posições n/2 e n/2+1;
+                         3) se a quantidade n for ímpar, será a média dos valores na posição n+1/2.
+
+Mediana x média: a mediana não é influenciada diretamente pelos outliers. Já a média é influenciada por todos os valores.
+Assim, a média pode nos dar uma distorção, ou seja, não representar realmente os valores que estão centralizados.
+Então, ao analisar um conjunto de dados muito grande, que não se tem uma noção de centralidade, é interessante calcular tanto a 
+média quanto a mediana.
+
+2. Medidas de variabilidade: estas medidas vão mostrar a distância que existe entre os dados. 
+
+  Variância: 
+  
+  Esta fórmula calcula a variância da população:
+  
+  σ = Σ (x1 - x)² / N
+  
+  Esta fórmula calcula a variância da amostra:
+  
+  s² = Σ (x1 - x)² / n - 1
+   
+  x = média
+  
+  Desvio padrão: calcula a variância da amostra. O desvio padrão nos diz, em média, a distância que os dados estão da média.
+  Quanto maior o desvio padrão, mais os dados estão afastados da média.
+  
+  O desvio padrão é a raiz quadrada da variância da amostra.
+  
+  s = √ Σ (x1 - x)² / n - 1
+   
+  x = média
+  
+ Amplitude: é a diferença entre o maior e o menor valor do conjunto de dados.
+  
+ 3. Medidas não centrais: ajudam a entender como os dados estão distribuídos.
+ 
+ Quartis: 1º quartil - 25% dos menores valores
+          2º quartil - 50% (igual a mediana) 
+          3º quartil - 75% dos maiores valores
+
+::::FUNÇÕES NO R:::::
+
+quantile () - para calcular os quartis
+
+sd () - para calcular o desvio padrão
+
+var () - para calcular a variância
+ 
+mean () - para calcular a média
+
+median () - para calcular a mediana
+
+Exemplo:
+
+##Vamos calcular as medidas de centralidade e variabilidade do conjunto de salários de um time de futebol.
+
+jogadoras = c(40000, 18000, 12000, 250000, 30000, 140000, 300000, 40000, 800000)
+
+##Para calcular a média
+mean (jogadoras)
+
+##Para calcular a mediana
+median (jogadoras)
+
+##Para calcular os quartis
+quantile (jogadoras)
+
+##Para calcular o desvio padrão
+sd (jogadoras)
+
+##É possível também usar a função summary, que já traz todas estas medidas de um conjunto de dados
+summary (jogadoras)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
