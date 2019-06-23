@@ -1,0 +1,197 @@
+O que é amostra?
+
+Amostra é parte de uma população selecionada usando alguma técnica que dê chances iguais 
+a todos os elementos da população de serem selecionados. Ou seja, seleção precisa ser aleatória.
+
+População: alvo do estudo
+Amostra: suconjunto da população
+
+Trabalhar com uma amostra permite uma inferência sobre a população.
+Uma amostra feita corretamente permite representar as mesmas características da população.
+Senão, ela é enviesada.
+
+Enviesamento: subestima ou superestima o parâmetro da população.
+Algumas causas: - pesquisas feitas com pessoas próximas, de fácil acesso;
+                - pesquisas pela internet (apenas quem tem opinião forte sobre o assunto, responderá);
+                - sem uso de mecanismos de seleção aleatória.
+
+Custo da amostra:
+- margem de erro e nível de confiança;
+- variação de uma pesquisa para a outra (contudo, pode ser medida).
+
+Principais tipos de amostras:
+
+1. Aleatória simples: definir tamanho da amostra (n) e determinar uma forma de selecionar os n elementos de forma aleatória.
+  Como garantir a aleatoriedade? 1) indexando os elementos da população; 2) sortear com uma ferramenta os n elementos da amostra; 
+  - com reposição: uma vez que o elemento da população é selecionado, ele volta a fazer parte da população e ele volta a ter
+  as mesmas chances que os demais elementos. 
+  Exemplo: selecionar um atleta para o teste anti-doping 
+  - sem reposição: uma vez que um elemento da população é selecionado, ele não faz mais parte da população. Não tem mais chances
+  de ser selecionado de novo.
+  Exemplo: selecionar um eleitor para uma pesquisa eleitoral 
+
+2. Estratificada: A população é dividida em estratos (alguns exemplos: raça, escolaridade, religião).
+
+3. Sistemática: É escolhido um elemento aleatório (sortear um número qualquer) e parte deste, a cada n elementos, 
+um novo é escolhido. 
+Exemplo: sorteia-se o número 38, o próximo será o 138 (+100), em seguida, o 238 (+100), assim por diante. 
+
+
+:::::FUNÇÕES NO R:::::
+
+sample (): usada para gerar uma amostra aleatória simples com ou sem reposição.
+
+strata (): usada para gerar uma amostra estratificada. Encontra no pacote "sampling".
+
+S.SY (): usada para gerar uma amostra sistemática. 
+
+
+1. Para gerar uma amostra aleatória simples
+
+##Para escolher um número aletório em um conjunto de n elementos
+
+sample (c(100), 1)
+
+##Para gerar uma amostra aleatória de 150 elementos de 0 ou 1 
+
+amostra = sample (c(0,1), 150, replace = TRUE, prob = c(0.5, 0.5))
+length(amostra[amostra==1])
+length(amostra[amostra==0])
+
+2. Para gerar uma amostra estratificada
+
+##Para gerar uma amostra estratificada vamos usar o database "iris"
+
+summary(iris)
+
+  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species  
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100   setosa    :50  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300   versicolor:50  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300   virginica :50  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199                  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800                  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500                  
+
+##Para gerar uma amostra em que as espécies (setosa, versicolor, virginica) estejam representadas na mesma proporção:
+
+install.package("sampling")
+library (sampling)
+
+amostrairis2 = strata (iris, c("Species"), size = c(25, 25, 25), method = "srswor")
+summary(amostrairis2)
+
+     Species      ID_unit           Prob        Stratum 
+ setosa    :25   Min.   :  2.0   Min.   :0.5   Min.   :1  
+ versicolor:25   1st Qu.: 37.5   1st Qu.:0.5   1st Qu.:1  
+ virginica :25   Median : 81.0   Median :0.5   Median :2  
+                 Mean   : 75.4   Mean   :0.5   Mean   :2  
+                 3rd Qu.:112.5   3rd Qu.:0.5   3rd Qu.:3  
+                 Max.   :146.0   Max.   :0.5   Max.   :3  
+                 
+##Neste caso, do database "iris", a variável categórica "Species" tinha a mesma distribuição (50, 50, 50). 
+Em casos de a variável categórica NÃO ter a mesma distribuição, mas deseja-se manter esta proporção, veja o exemplo a seguir.
+No database infert, verificamos que os anos de escolaridade (education) possuem proporções diferentes (12, 120, 116).
+
+summary (infert)
+
+ education        age            parity         induced            case       
+ 0-5yrs : 12   Min.   :21.00   Min.   :1.000   Min.   :0.0000   Min.   :0.0000  
+ 6-11yrs:120   1st Qu.:28.00   1st Qu.:1.000   1st Qu.:0.0000   1st Qu.:0.0000  
+ 12+ yrs:116   Median :31.00   Median :2.000   Median :0.0000   Median :0.0000  
+               Mean   :31.50   Mean   :2.093   Mean   :0.5726   Mean   :0.3347  
+               3rd Qu.:35.25   3rd Qu.:3.000   3rd Qu.:1.0000   3rd Qu.:1.0000  
+               Max.   :44.00   Max.   :6.000   Max.   :2.0000   Max.   :1.0000  
+  spontaneous        stratum      pooled.stratum 
+ Min.   :0.0000   Min.   : 1.00   Min.   : 1.00  
+ 1st Qu.:0.0000   1st Qu.:21.00   1st Qu.:19.00  
+ Median :0.0000   Median :42.00   Median :36.00  
+ Mean   :0.5766   Mean   :41.87   Mean   :33.58  
+ 3rd Qu.:1.0000   3rd Qu.:62.25   3rd Qu.:48.25  
+ Max.   :2.0000   Max.   :83.00   Max.   :63.00  
+
+##Primeiro, calcular a proporção de cada estrato:
+
+##0-5yrs
+12/248 * 100 
+
+##Sendo: 12 [número de mulheres com 0-5 anos de escolaridade] /248 [total de mulheres no databse] * 100 [nº de elementos que quero na minha amostra]
+
+##6-11yrs
+120/248 * 100 
+
+##12+ yrs
+116/248 * 100
+
+##As proporções da minha amostra, então serão 5 (0-5 yrs), 48 (6-11yrs) e 47 (12+ yrs)
+
+3. Para gerar uma amostra estratificada
+
+
+
+amostra = strata(infert, c("education"), size=c(5, 48, 47), method="srswor")
+
+ education     ID_unit           Prob           Stratum    
+ 0-5yrs : 5   Min.   :  1.0   Min.   :0.4000   Min.   :1.00  
+ 6-11yrs:48   1st Qu.: 66.5   1st Qu.:0.4000   1st Qu.:2.00  
+ 12+ yrs:47   Median :131.5   Median :0.4052   Median :2.00  
+              Mean   :126.7   Mean   :0.4033   Mean   :2.42  
+              3rd Qu.:185.2   3rd Qu.:0.4052   3rd Qu.:3.00  
+              Max.   :247.0   Max.   :0.4167   Max.   :3.00  
+
+##Último comentário sobre o código: o method="srswor" na função strata significa que é gerada uma amostra aleatória SEM reposição. 
+Para conhecer outros métodos, use Help na função strata. 
+
+3. Para gerar amostra sistemática
+
+##Instalar o pacote "TeachingSampling"
+
+install.packages("TeachingSampling")
+library(TeachingSampling)
+
+##O pacote TeachingSampling vai gerar números aleatórios que depois podemos usar para fazer a amostra
+Vamos então gerar uma amostra sistemática do database "iris".
+
+amostra = S.SY(150, 10)
+
+##A função acima selecionou aleatoriamente o 1º número de um conjunto entre 0 e 150 com intervalo de 10 em 10. 
+
+ [,1]
+ [1,]    6
+ [2,]   16
+ [3,]   26
+ [4,]   36
+ [5,]   46
+ [6,]   56
+ [7,]   66
+ [8,]   76
+ [9,]   86
+[10,]   96
+[11,]  106
+[12,]  116
+[13,]  126
+[14,]  136
+[15,]  146
+
+##Então, como usar esta seleção aleatória de números para gerar uma amostra sistemática do database "iris"?
+
+amostrairis = iris[amostra,]
+
+    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+6            5.4         3.9          1.7         0.4     setosa
+16           5.7         4.4          1.5         0.4     setosa
+26           5.0         3.0          1.6         0.2     setosa
+36           5.0         3.2          1.2         0.2     setosa
+46           4.8         3.0          1.4         0.3     setosa
+56           5.7         2.8          4.5         1.3 versicolor
+66           6.7         3.1          4.4         1.4 versicolor
+76           6.6         3.0          4.4         1.4 versicolor
+86           6.0         3.4          4.5         1.6 versicolor
+96           5.7         3.0          4.2         1.2 versicolor
+106          7.6         3.0          6.6         2.1  virginica
+116          6.4         3.2          5.3         2.3  virginica
+126          7.2         3.2          6.0         1.8  virginica
+136          7.7         3.0          6.1         2.3  virginica
+146          6.7         3.0          5.2         2.3  virginica
+
+##Assim, foram alteradas as linhas do database "iris" conforme a ordem aleatória em amostra = SY (150, 10)
+
