@@ -46,7 +46,7 @@ sample (): usada para gerar uma amostra aleatória simples com ou sem reposiçã
 
 strata (): usada para gerar uma amostra estratificada. Encontra no pacote "sampling".
 
-S.SY (): usada para gerar uma amostra sistemática. 
+S.SY (): usada para gerar uma amostra sistemática. Encontra no pacote "TeachingSampling".
 
 
 1. Para gerar uma amostra aleatória simples
