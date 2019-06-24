@@ -1,0 +1,34 @@
+1. Distribuição normal
+
+É a distribuição mais importante da estatística.
+Qual seu perfil?
+É uma distribuição em que a média dos dados se encontra ao centro e, portanto, não é uma distribuição simétrica.
+É possível encontrar relativamente a mesma quantidade de dados acima e abaixo da média.
+Além disso, suas principais características são:
+1) 68% dos dados estão a 1 desvio padrão da média;
+2) 27% dos dados estão a 2 desvios padrões da média;
+3) 4.2% dos dados estão a 3 desvios padrões da média;
+4) 0.2% dos dados estão a 4 desvios padrões da média.
+
+Se gerarmos um gráfico de frequência de dados distribuídos normalmente, ele vai apresentar um formato de sino com a média ao centro,
+vai ter uma grande concentração dos dados entre 1 desvio padrão da média. 
+
+2. Distribuição normal padrão (z)
+
+O escore z ou valor z mostra o número de desvios padrão que o valor está acima ou abaixo da média.
+
+A distribuição normal PADRÃO tem a média = 0 e o desvio padrão = 1, contudo, a maioria das distribuições normal não vão
+ter média = 0 e sd = 1. Elas podem ter infinitas possibilidades em termos de média e desvio padrão. APENAS a distribuição
+normal PADRÃO tem esses parâmetros. 
+
+Usa-se a fórmula: z = x - μ para calcular a probabilidade de os dados com relação a tabela z.
+                        σ
+
+
+
+
+
+
+
+
+
