@@ -1,0 +1,167 @@
+1. Probabilidade
+
+Vamos estudar várias distribuições de probabilidade que são usadas para calcular a probabilidade da ocorrência de um evento.
+
+Mas antes de entrar no estudo propriamente dito das distribuições de probabilidade, precisamos entender os conceitos básicos.
+
+Então, a probabilidade é denotada por P e ela sempre será um valor real entre 0 e 1, sendo que este resultado pode ser convertido
+para percentual (multiplicando por 100). É impossível ter uma probabilidade negativa (menor que zero) ou maior que 1.
+ 
+Assim, se a P = 1, é certo que o evento irá ocorrer. Se a P = 0, é certo que o evento não irá ocorrer, é um evento impossível.
+
+2. Alguns conceitos importantes
+
+O que é experimento? O que está sendo estudado.
+
+O que é espaço amostral? todas as probabilidades de ocorrência do evento.
+
+O que é evento? Resultados ocorridos.
+
+Exemplo 1:
+
+Experimento: jogar a moeda.
+
+Espaço amostral: cara ou coroa.
+
+Evento: coroa.
+
+Exemplo 2:
+
+Experimento: jogar um dado.
+
+Espaço amostral: todos os números inteiros de 1 a 6, ou seja: 1, 2, 3, 4, 5, 6.
+
+Evento: 3
+
+
+Eventos excludentes: quando não podem ocorrer ao mesmo tempo.
+                    Ex: jogar o dado e ser 2 e ímpar.
+
+Eventos não excludentes: quando podem ocorrer ao mesmo tempo.
+                    Ex: jogar um dado e ser 2 e par.
+                    
+É importante entender eventos excludentes e não excludentes porque vai mudar a fórmula! 
+                    
+Eventos dependentes: a ocorrência de um evento afeta outro. Um tem que ocorrer, para depois ocorra outro.
+
+Eventos independentes: a ocorrência de um evento não afeta o outro.
+
+3. Para calcular um único evento:
+
+P = ocorrência esperada / número de eventos possíveis
+
+Exemplo: jogar um dado e sair o número 3 
+Experimento: jogar a moeda
+Espaço amostral: 1, 2, 3, 4, 5, 6 
+Evento: sair 3
+
+P = 1/6 = 0.166 = 16%
+
+Exemplo: jogar um dado e sair o número 1 ou 6 
+Experimento:jogar o dado
+Espaço amostral: 1, 2, 3, 4, 5, 6
+Evento: sair 1 ou 6 (duas possibilidades). Importante observar que são eventos não excludentes!
+
+P = 2/6 = 0.33 = 33%
+
+Exemplo: jogar um dado e dar um número par ou maior que 4
+Experimento: jogar um dado
+Espaço amostral: 1, 2, 3, 4, 5, 6
+Evento: 2, 4, 5, 6
+
+P = 4/6 = 0.66 = 66%
+
+::::EVENTOS EXCLUDENTES::::
+
+Para calcular a probabilidade de eventos excludentes, soma-se as probabilidades.
+
+Exemplo: jogar um dado e ser 1 ou par (eventos excludentes de acontecerem ao mesmo tempo)
+Experimento: jogar um dado
+Espaço amostral: 1, 2, 3, 4, 5, 6
+Evento: 1, 2, 4, 6
+
+P = 4/6 = 0.66 = 66%
+
+::::EVENTOS NÃO EXCLUDENTES::::
+
+Para calcular a probabilidade de eventos não excludentes, soma-se as probabilidades, subtrai-se as sobreposições.
+
+Exemplo: jogar um dado e ser 2 ou par (eventos não excludentes, podem acontecer ao mesmo tempo)
+Experimento: jogar um dado
+Espaço amostral: 1, 2, 3, 4, 5, 6
+Evento: 2, 4, 6
+
+P = 1/6 + 3/6 - 1/6 = 4/6 - 1/6 = 3/6 = 0.5 = 50%
+
+Neste caso, a sobreposição é ser 2 e par.
+
+A probabilidade de ser 2 é: 1/6
+A probabilidade de ser par é: 3/6
+Aqui há uma sobreposição, pois calculamos a probabilidade de sair 2 e sair 2 como um número par.
+
+::::EVENTOS INDEPENDENTES::::
+
+Quando estamos falando de vários eventos vamos usar a multiplicação!
+
+Exemplo: qual a probabilidade de jogar dois dados e dar 1 e 6 (dois eventos independentes)
+
+P (dado 1) = 1/6 
+
+P (dado 6) = 1/6 
+
+P (dos dois eventos) = 1/6 * 1/6 = 0.027 = 2.7%
+
+::::EVENTOS DEPENDENTES::::
+
+Novamente, quando estamos falando de vários eventos vamos usar a multiplicação!
+
+Exemplo: com 6 cartas na mão (A, 2, 3, 4, 5, 6), qual a probabilidade de na próxima rodada tirar o A e na segunda, tirar o 4?
+
+P (tirar o A na 1ª rodada) = 1/6
+Espaço amostral: A, 2, 3, 4, 5, 6
+Evento: tirar o A
+
+P (tirar o 4 na 2ª rodada) = 1/5
+Espaço amostral: 2, 3, 4, 5, 6
+Evento: tirar o 4
+
+P (dois eventos) = 1/6 * 1/5 = 0.033 = 3.3%
+
+Importante: são eventos dependentes porque as cartas não voltam para a mão (ou para o baralho), por isso, muda o espaço amostral.
+
+::::PROBABILIDADE A LONGO PRAZO::::
+
+Quando falamos de probabilidade, estamos falando de algo que vai acontecer a longo prazo. 
+Quando estamos falando de grandes amostras, a probabilidade tende a convenger para a média esperada.
+Quando falamos de uma pequena amostra, há mais chances do acaso afetar a média esperada.
+Por exemplo, uma empresa com 10 funcionários tem mais chances de não convergir com a média esperada de rotatitividade do
+que uma empresa com milhares de funcionários (maior espaço amostral).
+
+::::DISTRIBUIÇÃO::::
+
+As distribuições mostram o comportamento de dados aleatórios.
+Quando falamos de distribuições, falamos que um conjunto de dados tem um determinado perfil.
+Por ter um perfil semelhante, pode-se aplicar técnicas estatísticas para aquele perfil.
+
+Então, por exemplo, se tivermos algumas variáveis aleatórias e resolvessemos gerar um gráfico de frequência. 
+Em um gráfico de frequência (histograma), obviamente que quando maior a ocorrência de um valor, maior será a sua área. 
+É possível verificar que há maior frequência destes dados ao redor da média e que 68% deles estão a 1 desvio padrão média
+e 32% deles estão a 2 desvios padrões da média. Podemos concluir que são dados com distribuição normal.
+
+::::DISTRIUIÇÃO BINOMIAL::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
