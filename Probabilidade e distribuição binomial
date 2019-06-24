@@ -142,10 +142,10 @@ As distribuições mostram o comportamento de dados aleatórios.
 Quando falamos de distribuições, falamos que um conjunto de dados tem um determinado perfil.
 Por ter um perfil semelhante, pode-se aplicar técnicas estatísticas para aquele perfil.
 
-Então, por exemplo, se tivermos algumas variáveis aleatórias e resolvessemos gerar um gráfico de frequência. 
-Em um gráfico de frequência (histograma), obviamente que quando maior a ocorrência de um valor, maior será a sua área. 
+Então, por exemplo, temos algumas variáveis aleatórias e resolvessemos gerar um gráfico de frequência. 
+Em um gráfico de frequência (histograma), obviamente que quanto maior a ocorrência de um valor, maior será a sua área. 
 É possível verificar que há maior frequência destes dados ao redor da média e que 68% deles estão a 1 desvio padrão média
-e 32% deles estão a 2 desvios padrões da média. Podemos concluir que são dados com distribuição normal.
+e 32% deles estão a 2 desvios padrões da média. Podemos concluir, então, que são dados com distribuição normal!
 
 ::::DISTRIUIÇÃO BINOMIAL::::
 
