@@ -209,3 +209,7 @@ amostrairis = iris[amostra,]
 
 ##Assim, foram alteradas as linhas do database "iris" conforme a ordem aleatória em amostra = SY (150, 10)
 
+SETORES CENSITÁRIOS DO IBGE: ftp://geoftp.ibge.gov.br/cartas_e_mapas/mapas_para_fins_de_levantamentos_estatisticos/censo_demografico_2010/mapas_e_descritivos_de_setores_censitarios/ 
+
+Setores censitários da cidade de São Paulo: ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_do_Universo/Agregados_por_Setores_Censitarios/
+
